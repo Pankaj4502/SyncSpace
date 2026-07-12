@@ -29,10 +29,6 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => {
     console.log('User disconnected:', socket.id);
   });
-
-  socket.on('send-awareness', (updateData, roomID) => {
-    socket.to(roomID).emit('receive-awareness', updateData);
-  });
 });
 
 server.listen(3001, () => {
